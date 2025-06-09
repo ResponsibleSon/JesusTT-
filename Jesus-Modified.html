@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jesus N-AsapTickets Official</title>
+</head>
+<style>
+    body{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }   
+    /* Header Styles */
+    header{
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 18%;
+            display: flex;
+            z-index: 200;
+            box-shadow: inset 3px 3px 3px rgba(0, 0, 0, 0.5), inset -3px -3px 3px rgba(0, 0, 0, 0.5);
+            background: linear-gradient(skyblue, white);
+        }
+        /* LeftHeader Styles */
+        .leftHeader{
+            height: 100%;
+            width: 20%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+        .leftHeader button{
+        font-family: Arial, Helvetica, sans-serif;
+        height: 30px;
+        width: 60px;
+        border-radius: 5px;
+        font-size: 70%;  
+        font-weight: bold; 
+        border: none; 
+        background: linear-gradient(skyblue); 
+        color: rgb(235, 229, 229);   
+        cursor: pointer;
+        }
+        @media (max-width: 1200px) {
+            .leftHeader button{
+                font-size: 50%;
+            }
+        }
+        /* middelHeader styles */
+        .middleHeader{
+            height: 100%;
+            width: 60%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .MHcomapanyLogo{
+            width: 100%;
+            height: 65%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .companyLogo{
+            height: 65px;
+            width: 65px;
+            border-radius: 30px;
+        }
+        .companyLogo img{
+            height: 100%;
+            width: 100%;
+            border-radius: 50%;
+        }
+        .MHcompanyName-Emblem{
+            width: 100%;
+            height: 30%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .name{
+            margin-bottom: 0;
+            font-size: 80%;
+            font-weight: bolder;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .emblem{
+            margin-top: 0;
+            font-size: 50%;
+            font-style: italic;
+            margin-top: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    
+        /* rightHeader styles */
+        .rightHeader{
+            height: 100%;
+            width: 20%;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            padding-left: 2px;
+            padding-right: 2px;
+        }
+        .SMplatforms{
+            width: 30px;
+            height: 30px;
+            border-radius: 100%;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            cursor: pointer;
+        }
+        @media (max-width: 1200px) {
+            .SMplatforms{width: 22px; border-radius: 10px;}
+        }
+        .SMplatforms img{
+            height: 100%;
+            width: 100%;
+            border-radius: 50%;
+        }
+    
+
+    /* Main styles */
+    main{
+        position: absolute;
+        top: 23%;
+        left: 2%;
+        right: 2%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    /* Price and Destination Update */
+    .price-destinaton-Update{
+        width: 800px;
+        height: 300px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .price-destinaton-Update img{
+        height: 100%;
+        width: 100%;
+    }
+    @media (max-width: 1200px) {
+    .price-destinaton-Update{
+        width: 100%;
+    height: 200px;
+    }
+    .price-destinaton-Update img{
+        height: 100%;
+        width: 100%;
+    }
+    }
+    /* About us styles */
+    .about-us{
+        margin-top: 20px;
+        display: flex;
+        font-family: Arial, Helvetica, sans-serif;
+        color: rgb(90, 85, 85);
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 2px 2px 2.5px rgba(0, 0, 0, 0.5), -2px -2px 2.5px rgba(0, 0, 0, 0.5);
+        border-radius: 15px;
+    }
+    .about-us p, h3, h4, h5{
+        text-align: center;
+    }
+    .about-us h3, h4, h5{
+        color: skyblue;
+    }
+    /* Feedback Section styles */
+    .feedback-section{
+        margin-top: 20px;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        column-gap: 5px;
+        row-gap: 5px;
+        padding: 10px;
+    }
+    @media (max-width: 1200px) {
+        .feedback-section{
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+    .feedback-section div{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 2.5px 5px;
+        font-size: 60%;
+        background:  linear-gradient(rgb(240, 236, 236));
+        border-radius: 8px;
+    }
+    /* New-Feedback Styles */
+    .new-feedback{
+        margin-top: 25px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: rgb(248, 246, 246);
+        box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5), -1px -1px 1px rgba(0, 0, 0, 0.5);
+        border-radius: 10px;   
+    }
+    form{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        row-gap: 10px;
+        padding: 10px;
+    }
+    form button{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .new-feedback fieldset{
+        width: 300px;
+        height: 55px;
+        display: flex;
+        justify-content: start;
+        align-items: center;
+    }
+    legend{
+        font-size: 50%;
+        font-weight: bold; 
+        font-family: Arial, Helvetica, sans-serif;  
+    }
+    .new-feedback input{
+        width: 200px;
+        height: 40px;
+        outline: none;
+        border-radius: 10px;
+        padding-left: 10px; 
+        font-size: 60%;
+        font-style: italic;
+        background-color: skyblue;
+    }
+    .new-feedback input:hover{
+        background-color: white;
+    }
+    .new-feedback button{
+        width: 300px;
+        height: 50px;
+        border: none;
+        background-color: rgb(16, 162, 220);
+        border-radius: 10px;
+        color: white;
+        font-weight: bold;
+        cursor: pointer;
+    }
+    .new-feedback button:active{
+        background-color: skyblue;
+    }
+    .no-detailError{
+        font-size: 75%;
+        color: red;
+        font-style: italic;
+    }
+    /* Book An Appointment Styles */
+    .booking-appointment{
+        margin-top: 30px;
+        padding: 10px;
+        background-color: skyblue;
+        border-radius: 10px;
+
+    }.number-name-ApptDate{
+        display: flex;
+        column-gap: 10px;
+    }
+    .number-name-ApptDate input{
+        width: 100px;
+        height: 35px;
+        border: none;
+        outline: none;
+        padding-left: 5px;
+        color: gray;
+    }
+    .message-submit{
+        margin-top: 8px;
+        display: flex;
+        flex-direction: column;
+        row-gap: 10px;
+    }
+    .message-submit button, input{
+        height: 40px;
+        border: none;
+        outline: none;
+        padding-left: 5px; 
+    }
+    .message-submit button{
+        border-radius: 5px;
+        background-color: blue;
+        color: white;
+        font-weight: bold;
+        cursor: pointer;
+    }
+    .message-submit button:active{
+        background-color: white;
+        color: blue;
+    }
+    /* Contacts Styles */
+    .contacts{
+        margin-top: 50px;
+        display: flex;
+        flex-direction: column;
+        row-gap: 8px;
+        padding: 10px;
+        border-radius: 5px;
+    }
+    .contact-platform{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        column-gap: 2px;
+        cursor: pointer;
+
+    }
+    .imgP{
+        width: 35px;
+        height: 35px;
+        border-radius: 5px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: inset 2px 2px 2px rgb(0, 0, 0, 0.5), inset -2px -2px 2px rgb(0, 0, 0, 0.5);
+    }
+    .imgP img{
+        height: 90%;
+        width: 90%;
+        border-radius: 5px;
+    }
+    .nameP{
+        width: 200px;
+        height: 35px;
+        border-radius: 5px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 80%;
+        box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.5), inset -2px -2px 5px rgba(0, 0, 0, 0.5);
+        margin-left: -1.5px;
+    }
+    /* Footer Styles */
+    footer{
+        color: rgb(46, 44, 44);
+        font-family: Arial, Helvetica, sans-serif;
+        margin-top: 100px;
+        font-size: 85%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+    /* Hanging buttons */
+    .call-now-Hanging{
+        height: 40px;
+        width: 40px;
+        border-radius: 100%;
+        position: fixed;
+        top: 60%;
+        left: 88%;
+        border: none;
+        font-size: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        animation: call-now-Hanging 2s infinite;
+    }
+    @keyframes call-now-Hanging  {
+        0%, 100% {
+            transform: translateY(0);
+        }
+        50% {
+            transform: translateY(-15px);
+        }
+    }
+    .email-now-Hanging{
+        height: 50px;
+        width: 50px;
+        border-radius: 10px;
+        position: fixed;
+        top: 68%;
+        left: 87%;
+        border: none;
+        font-size: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        animation: email-now-Hanging 2s infinite;
+    }
+    @keyframes email-now-Hanging  {
+        0%, 100% {
+            transform: translateY(0);
+        }
+        50% {
+            transform: translateY(-15px);
+        }
+    }
+    .call-now-Hanging img{
+        height: 100%;
+        width: 100%;
+        border-radius: 100%;
+    }
+    .email-now-Hanging img {
+        height: 100%;
+        width: 100%;
+        border-radius: 10px;
+    }
+    .cancel-call{
+        background: black;
+        position: fixed;
+        height: 20px;
+        width: 20px;
+        top: 58%;
+        left: 83%;
+        font-size: 80%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 2px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    .cancel-call-on{
+        display: none;
+    }
+    .cancel-email{
+        background-color: black;
+        position: fixed;
+        height: 20px;
+        width: 20px;
+        top: 66%;
+        left: 82%;
+        font-size: 80%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 2px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    .cancel-email-on{
+        display: none;
+    }
+    /* apptError */
+    .apptError{
+        font-size: 75%;
+        color: red;
+        font-style: italic;
+        text-align: center;
+    }
+    /* Offerings Styles */
+    .offerings{
+        position: absolute;
+        background-color: skyblue;
+        color: rgb(87, 87, 216);
+        display: flex;
+        flex-direction: column;
+        width: 200px;
+        top: 115%;
+        border-radius: 5px;
+    }
+    .offerings-on{
+        display: none;
+    }
+    .offerings div{
+        padding: 10px;
+        margin-top: 5px;
+    }
+    .offerings div:hover{
+        scale: 105%;
+    }
+    .offerings-nav{
+        position: relative;  
+    }
+    /* call and email p */
+    .callHang{
+        background-color: green;
+        color: white;
+        font-weight: bold;
+        cursor: pointer;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 100%;
+    }
+    /* Load and submit feedback Styles */
+    .LoadnSubmitFeedback{
+        height: 15px;
+        width: 15px;
+        background-color: green;
+        border-radius: 50%;
+        border: 3px solid transparent; 
+        border-top: 3px solid black;
+        animation: spin 1.5s linear infinite;
+    }
+    @keyframes spin  { 0% {
+        transform: rotate(0deg);
+        box-shadow: 0 0 20px #0ff;
+    } 50% {
+        box-shadow: 0 0 20px #00ff;
+    } 100% {
+        transform: rotate(360deg);
+        box-shadow: 0 0 20px #00ff;
+    }
+   }
+   /* Submit Alert P styles  */
+   .SubmitAlert{
+    color: green;
+   }
+
+   </style>
+<body>
+
+        <header>
+        <div class="leftHeader">
+            <button class="home-nav" onclick="window.location.href='Jesus-Modified.html'">Home</button>
+
+            <button class="offerings-nav js-offeringsNav" onclick="
+            offeringsToggle();
+            ">Offering
+                <div class="offerings-on js-offerings">
+                  <div>General Travel Inquiry</div>
+                  <div>Flight Inquiry and Booking</div>
+                  <div>Rentals: Hotels, Cars etc</div>
+                  <div>Post-booking Customer Support</div>
+                  <div>Event Planning and Tours</div>
+                </div>
+            </button>
+
+            <button class="contacts-nav" onclick="window.location.href='#contactsToJesus'">Contacts</button>
+        </div>
+
+
+        <div class="middleHeader">
+            <div class="MHcomapanyLogo">
+                <div class="companyLogo">
+                    <img src="imagesJesusN/Jesus-comp.jpeg.jpg">
+                </div>
+            </div>
+
+            <div class="MHcompanyName-Emblem">
+                <p class="name">Jesus Travels and Tours</p>
+                <p class="emblem">On your travels call upon me, I will answer thee...</p>
+            </div>
+
+        </div>
+
+        <div class="rightHeader">
+            <div class="SMplatforms">
+                <img src="imagesJesusN/twitter.jpg">
+            </div>
+
+            <div class="SMplatforms">
+                <img src="imagesJesusN/acebook.jpg">
+            </div>
+
+            <div class="SMplatforms">
+                <img src="imagesJesusN/instagram.png">
+            </div>
+        </div>
+    </header>
+    
+
+    <main>
+        <!-- Update Section -->
+        <section class="price-destinaton-Update">
+            <img src="imagesJesusN/call.jpg" alt="p_d-U"> 
+        </section>
+
+        <!-- About-Us Section -->
+        <section class="about-us">
+            <h3>WHO WE ARE</h3>
+            <p>We are expert in flight booking service and very experienced in getting you the best fares for your trips. Tink of us like the Jesus of your trip; we make preparations for you before hand your travel even at the late date of your trip we will always turn up</p>
+
+            <h4>WHAT WE DO</h4>
+            <p>jlkgjffefdn djjfkfjefewwo dkjwfweifw jkjljna ijww kjfwf hfwieiw hwefwi wiw wfwiwi wifhwifw weihwir w hweie wifhwir wehwir whfwir whwrhw</p>
+
+            <h5>WHY WE SHOULD WORK FOR YOU</h5>
+            <ul>
+                <li>Personalised Assistance</li>
+                <li>issuing of best deals</li>
+                <li>Discount upon first booking with us</li>
+                <li>Book now, Pay later</li>
+                <li>Not jokes. We mean</li>
+            </ul>
+        </section>
+
+        <!-- Feedback Section -->
+        <section class="feedback-section js-feedbackSection">
+
+            <div class="feedback">
+                <p>I discovered Ajent jesus just two ays away to my trip..... Amazingly he got me a very Good deal for a considerabl and cheap price. Thanks to agent Jesus.
+                </p>
+                <p>- <strong>Ona</strong></p>
+            </div>
+
+            <div class="feedback">
+                <p>I discovered Ajent jesus just two ays away to my trip..... Amazingly he got me a very Good deal for a considerabl and cheap price. Thanks to agent Jesus.
+                </p>
+                <p>- <strong>Ona</strong></p>
+            </div>
+
+            <div class="feedback">
+
+                <p>I discovered Ajent jesus just two ays away to my trip..... Amazingly he got me a very Good deal for a considerabl and cheap price. Thanks to agent Jesus.
+                </p>
+
+                <p>- <strong>Ona</strong></p>  
+                
+            </div> 
+
+            <div class="feedback">
+                <p>I discovered Ajent jesus just two ays away to my trip..... Amazingly he got me a very Good deal for a considerabl and cheap price. Thanks to agent Jesus.
+                </p>
+                <p>- <strong>Okoronkwo zephniah racheal john</strong></p>
+            </div>
+        </section>
+        
+        <!-- New feedback inputs-submit -->
+
+        <section class="new-feedback">
+            <h6>Tried Our Sevice? Give Your Feedback</h6>
+
+            <form action="javascript:void">
+                <fieldset>
+                    <legend>Name*</legend>
+                    <input placeholder="Name here" class="nameFeedback js-nameInput">
+                </fieldset>
+
+                <fieldset>
+                    <legend>Feedback*</legend>
+                    <input placeholder="Feedback message here.." class="messageFeedback js-feedbackInput">
+                </fieldset>
+                <div class="no-detailError">
+                    <p class="js-errorNodetail"></p>
+                </div>
+                
+
+                <button class="submit-feedback js-feedbackSubmit" onclick="
+                feedbackSave();
+                ">Submit</button>
+            </form>
+        </section>
+
+        <!-- Book an Appointment -->
+
+        <section class="booking-appointment" id="ApptSection">
+            <h3>Book An Appointmnet</h3>
+
+           <div class="number-name-ApptDate">
+            <input type="text" placeholder="Name" class="js-apptName">
+            <input type="tel" placeholder="Ph. number" class="js-apptNumber">
+            <input type="datetime-local" placeholder="Appt. Time" class="js-apptDate">
+           </div>
+
+           <div class="message-submit">
+            <input type="text" placeholder="Type message here..." class="js-apptMessage">
+
+            <p class="js-apptError apptError"></p>
+
+            <button class="js-apptSendButton" onclick="
+            SendAppointment();
+            ">Edit and Send</button>
+           </div>
+
+           <a href="mailto:jesus.n@asaptickets.com?subject=Travel Assistance Needed!&body=" class="js-emailnowHang"></a>
+        </section>
+
+        <!-- Contacts Elements -->
+
+        <section class="contacts" id="contactsToJesus">
+            <h4>Contacts</h4>
+            <div class="contact-platform">
+                <div class="imgP" onclick="window.location.href='https://api.whatsapp.com/send?phone=+2348109658247&text=Hello Jesus T n T!%20greetings%20to%20you. I got referred here via your website and I am seeking assistance for my upcoming trip, can you please assist? Thanks'">
+                    <img src="imagesJesusN/call.jpg" alt="whatsApp">
+                </div>
+
+                <div class="nameP" onclick="window.location.href='https://api.whatsapp.com/send?phone=+2348109658247&text=Hello Jesus T n T!%20greetings%20to%20you. I got referred here via your website and I am seeking assistance for my upcoming trip, can you please assist? Thanks'">
+                    <p>jesus.n@asaptickets.com</p>
+                </div>
+            </div>
+
+            <div class="contact-platform">
+                <div class="imgP" onclick="window.location.href='tel:+18886346250'">
+                    <img src="imagesJesusN/call.jpg" alt="whatsApp">
+                </div>
+
+                <div class="nameP" onclick="window.location.href='tel:+18886346250'">
+                    <p>jesus.n@asaptickets.com</p>
+                </div>
+            </div>
+
+
+            <div class="contact-platform">
+                <div class="imgP" onclick="window.location.href='mailto:jesus.n@asaptickets.com?subject=Website Refferal: Travel Assistance Needed!&body='">
+                    <img src="imagesJesusN/call.jpg" alt="whatsApp">
+                </div>
+
+                <div class="nameP" onclick="window.location.href='mailto:jesus.n@asaptickets.com?subject=Website Refferal: Travel Assistance Needed!&body='">
+                    <p>jesus.n@asaptickets.com</p>
+                </div>
+            </div>
+        </section> 
+
+        <!-- Footer Element -->
+
+        <footer>
+            <p>&copy; 2025 Jesus N-AsapTickets. All rights reserved.</p>
+        </footer>
+    </main>
+    <!-- Hanging call And email -->
+    <div class="call-now-Hanging js-hangingCall" onclick="
+    HangingCall();
+    ">
+        <img class="js-callImg" src="imagesJesusN/call.jpg">
+    </div>
+
+    <div class="email-now-Hanging js-hangingEmail" onclick="
+    hangingEmail();
+    ">
+        <img class="js-emailImg" src="imagesJesusN/email.png">
+    </div>
+    <!-- Cancel call and email -->
+     <div class="cancel-call-on js-cancelCall" onclick="
+     forcancelCallnow()
+     ">❌</div>
+     <div class="cancel-email-on js-cancelEmail" onclick="
+     forcancelEmailnow()
+     ">❌</div>
+     
+    <script src="jesus.js"></script>
+</body>
+</html>
+
